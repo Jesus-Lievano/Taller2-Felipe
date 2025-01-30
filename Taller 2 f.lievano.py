@@ -13,3 +13,9 @@ plt.title("Histograma Distribución Exponencial")
 plt.xlabel("Tiempos Entre Arribos")
 plt.ylabel("Frecuencia")
 plt.show()
+
+import statsmodels.api as sm
+import scipy.stats as stats
+
+fig = sm.qqplot(data = vals, dist= stats.distributions.expon(scale = 1/lamb),line="45")
+plt.show()
